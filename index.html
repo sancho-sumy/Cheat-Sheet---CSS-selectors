@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet - CSS selectors</title>
+    <link rel="stylesheet" href="resources/css/styles.css">
+</head>
+<body>
+    <h1>CSS selectors</h1>
+    <br>
+    <h2>Basic selectors</h2>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Selector</th>
+                <th scope="col">Syntax</th>
+                <th scope="col">Decription</th>
+                <th scope="col">Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors" target="_blank">Universal</a></td>
+                <td class="td2"><code>* ns|* *|*</code></td>
+                <td class="td3">Selects all elements. Optionally, it may be restricted to a specific namespace or to all namespaces.</td>
+                <td class="td3"><code>*</code> will match all the elements of the document.</td>
+            </tr>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors" target="_blank">Type</a></td>
+                <td class="td2"><code>elementname</code></td>
+                <td class="td3">Selects all elements that have the given node name.</td>
+                <td class="td4"><code>input</code> will match any <code>&lt;input&gt</code> element.</td>
+            </tr>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors" target="_blank">Class</a></td>
+                <td class="td2"><code>.classname</code></td>
+                <td class="td3">Selects all elements that have the given <code>class</code> attribute.</td>
+                <td class="td3"><code>.index</code> will match any element that has a class of "index".</td>
+            </tr>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors" target="_blank">ID</a></td>
+                <td class="td2"><code>#idname</code></td>
+                <td class="td3">Selects an element based on the value of its <code>id</code> attribute. There should be only one element with a given ID in a document.</td>
+                <td class="td4"><code>#toc</code> will match the element that has the ID "toc".</td>
+            </tr>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors" target="_blank">Attribute</a></td>
+                <td class="td2"><code>[attr]</code> <code>[attr=value]</code> <code>[attr~=value]</code> <code>[attr|=value]</code> <code>[attr^=value]</code> <code>[attr$=value]</code> <code>[attr*=value]</code></td>
+                <td class="td3">Selects all elements that have the given attribute.</td>
+                <td class="td4"><code>[autoplay]</code> will match all elements that have the <code>autoplay</code> attribute set (to any value).</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h2>Grouping selectors</h2>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Syntax</th>
+                <th scope="col">Decription</th>
+                <th scope="col">Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors" target="_blank">Selector list</a></td>
+                <td class="td2"><code>A, B</code></td>
+                <td class="td3">The <code>,</code> selector is a grouping method that selects all the matching nodes.</td>
+                <td class="td3"><code>div, span</code> will match both <code>&ltspan&gt</code> and <code>&ltdiv&gt</code> elements.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h2>Combinators</h2>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Combinator</th>
+                <th scope="col">Syntax</th>
+                <th scope="col">Decription</th>
+                <th scope="col">Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator" target="_blank">Descendant</a></td>
+                <td class="td2"><code>A B</code></td>
+                <td class="td3">The <code>" "</code> (space) combinator selects nodes that are descendants of the first element.</td>
+                <td class="td3"><code>div span</code> will match all <code>&ltspan&gt</code> elements that are inside a <code>&ltdiv&gt</code> element.</td>
+            </tr>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator" target="_blank">Child</a></td>
+                <td class="td2"><code>A > B</code></td>
+                <td class="td3">The <code>></code> combinator selects nodes that are direct children of the first element.</td>
+                <td class="td4"><code>ul > li</code> will match all <code>&ltli&gt</code> elements that are nested directly inside a <code>&ltul&gt</code> element.</td>
+            </tr>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator" target="_blank">General sibling</a></td>
+                <td class="td2"><code>A ~ B</code></td>
+                <td class="td3">The <code>~</code> combinator selects siblings. This means that the second element follows the first (though not necessarily immediately), and both share the same parent.</td>
+                <td class="td3"><code>p ~ span</code> will match all <code>&ltspan&gt</code> elements that follow a <code>&ltp&gt</code>, immediately or not.</td>
+            </tr>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator" target="_blank">Adjacent sibling</a></td>
+                <td class="td2"><code>A + B</code></td>
+                <td class="td3">The <code>+</code> combinator matches the second element only if it <em>immediately</em> follows the first element.</td>
+                <td class="td4"><code>h2 + p</code> will match all <code>&ltp&gt</code> elements that <em>immediately</em> follow an <code>&lth2&gt</code> element.</td>
+            </tr>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors" target="_blank">Column</a></td>
+                <td class="td2"><code>A || B</code></td>
+                <td class="td3">The <code>||</code> combinator selects nodes which belong to a column</td>
+                <td class="td4"><code>col || td</code> will match all <code>&lttd&gt</code> elements that belong to the scope of the <code>&ltcol&gt</code>.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h2>Pseudo</h2>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Decription</th>
+                <th scope="col">Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank">Pseudo classes</a></td>
+                <td class="td3">The <code>:</code> pseudo allow the selection of elements based on state information that is not contained in the document tree..</td>
+                <td class="td3"><code>a:visited</code> will match all <code>&lta&gt</code> elements that have been visited by the user.</td>
+            </tr>
+            <tr>
+                <td class="td1" scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements" target="_blank">Pseudo elements</a></td>
+                <td class="td3">The <code>::</code> pseudo represent entities that are not included in HTML.</td>
+                <td class="td4"><code>p::first-line</code> will match the first line of all <code>&ltp&gt</code> elements.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <p class="note">Current cheat sheet based on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">MDN</a> material.</p>
+</body>
+</html>
